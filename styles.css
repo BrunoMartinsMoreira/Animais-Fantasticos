@@ -267,3 +267,12 @@ body{
     opacity: 1;
   }
 }
+.js .js-scroll{
+  opacity: 0;
+  transform: translate3d(-40px, 0, 0);
+  transition: .5s;
+}
+.js .js-scroll.active{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
