@@ -11,7 +11,8 @@ function tabNav() {
          tabContent.forEach((content) => {
             content.classList.remove('active');
          });
-         tabContent[index].classList.add('active');
+         const direction = tabContent[index].dataset.anime;
+         tabContent[index].classList.add('active', direction);
       }
 
       //adicionar evento -click- em cada imagem
