@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
 }
-.modal-container.ativo {
+.modal-container.active {
   display: flex;
 }
 
@@ -24,7 +24,7 @@
     transform: translate3d(0, 0, 0);
   }
 }
-.ativo .modal {
+.active .modal {
   animation: modalAnimation 0.5s forwards;
 }
 .modal {

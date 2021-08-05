@@ -6,12 +6,12 @@ export default function initModal() {
    if (openBtn && closeBtn && modalContainer) {
       function openModal(event) {
          event.preventDefault()
-         modalContainer.classList.add('ativo')
+         modalContainer.classList.add('active')
       }
 
       function closeModal(event) {
          event.preventDefault()
-         modalContainer.classList.remove('ativo')
+         modalContainer.classList.remove('active')
       }
 
       function clickContainerToCloseModal(event) {
