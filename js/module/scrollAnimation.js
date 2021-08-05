@@ -9,7 +9,7 @@ export default function initAnimatedScroll() {
             const isSectionVisible = (sectionTop - sectionView) < 0;
             if (isSectionVisible) {
                section.classList.add('active');
-            } else {
+            } else if (section.classList.contains('active')) {
                section.classList.remove('active');
             }
          });
