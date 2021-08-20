@@ -8,6 +8,7 @@ import initDropDownMenu from './module/dropDownMenu.js';
 import initMenuMobile from './module/menuMobile.js';
 import initFuncionamento from './module/horarioDeFuncionamento.js';
 import initFetchAnimais from './module/fetchAnimais.js';
+import initFetchBtc from './module/fetchBtc.js'
 
 softScroll();
 initAnimatedScroll();
@@ -19,7 +20,7 @@ initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
 initFetchAnimais();
-
+initFetchBtc();
 
 
 
