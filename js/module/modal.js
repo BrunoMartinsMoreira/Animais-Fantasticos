@@ -1,28 +1,43 @@
-export default function initModal() {
-   const openBtn = document.querySelector('[data-modal="abrir"]');
-   const closeBtn = document.querySelector('[data-modal="fechar"]');
-   const modalContainer = document.querySelector('[data-modal="container"]');
+export default class Modal {
+   constructor(openBtn, closeBtn, modalContainer) {
+      this.openBtn = document.querySelector(openBtn);
+      this.closeBtn = document.querySelector(closeBtn);
+      this.modalContainer = document.querySelector(modalContainer);
+      this.activeClass = 'active';
 
-   if (openBtn && closeBtn && modalContainer) {
-      function openModal(event) {
-         event.preventDefault()
-         modalContainer.classList.add('active')
-      }
-
-      function closeModal(event) {
-         event.preventDefault()
-         modalContainer.classList.remove('active')
-      }
-
-      function clickContainerToCloseModal(event) {
-         if (event.target === this) {
-            closeModal(event)
-         }
-
-      }
-
-      openBtn.addEventListener('click', openModal);
-      closeBtn.addEventListener('click', closeModal);
-      modalContainer.addEventListener('click', clickContainerToCloseModal);
+      this.eventToggleModal = this.eventToggleModal.bind(this);
+      this.clickAwayModal = this.clickAwayModal.bind(this);
    }
+
+   toggleModal() {
+      this.modalContainer.classList.toggle(this.activeClass)
+   }
+
+   eventToggleModal(event) {
+      event.preventDefault();
+      this.toggleModal();
+   }
+   // fecha o modal ao clicar fora dele
+   clickAwayModal(event) {
+      if (event.target === this.modalContainer) {
+         this.toggleModal()
+      }
+   }
+
+   addEvent() {
+      this.openBtn.addEventListener('click', this.eventToggleModal);
+      this.closeBtn.addEventListener('click', this.eventToggleModal);
+      this.modalContainer.addEventListener('click', this.clickAwayModal);
+   }
+
+   init() {
+      if (this.openBtn && this.closeBtn && this.modalContainer) {
+         this.addEvent()
+      }
+      return this;
+   }
+
+   /* {
+   
+   }*/
 }

@@ -23,6 +23,7 @@ export default class Accordion {
          this.activeAccordion(this.accordionList[0]);
          this.addEvent();
       }
+      return this;
    }
 }
 
