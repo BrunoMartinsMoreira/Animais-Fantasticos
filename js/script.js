@@ -4,6 +4,7 @@ import TabNav from "./module/tabNav.js";
 import Modal from "./module/modal.js";
 import Tooltip from "./module/toolTip.js";
 import buscaAnimais from './module/fetchAnimais.js';
+import FetchBtc from './module/fetchBtc.js'
 
 
 const scrollSuave = new softScroll('.navmenu a[href^="#"]');
@@ -22,6 +23,7 @@ const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
 buscaAnimais('../animais.json', '.numeros-grid');
+FetchBtc('https://blockchain.info/ticker', '.btc-preco');
 
 
 
@@ -30,7 +32,6 @@ import initDropDownMenu from './module/dropDownMenu.js';
 import initMenuMobile from './module/menuMobile.js';
 import initFuncionamento from './module/horarioDeFuncionamento.js';
 
-import initFetchBtc from './module/fetchBtc.js'
 import initAnimatedScroll from "./module/scrollAnimation.js";
 
 
@@ -41,8 +42,6 @@ import initAnimatedScroll from "./module/scrollAnimation.js";
 initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
-
-initFetchBtc();
 initAnimatedScroll();
 
 
