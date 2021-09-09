@@ -3,6 +3,8 @@ import Accordion from "./module/accordionNav.js";
 import TabNav from "./module/tabNav.js";
 import Modal from "./module/modal.js";
 import Tooltip from "./module/toolTip.js";
+import buscaAnimais from './module/fetchAnimais.js';
+
 
 const scrollSuave = new softScroll('.navmenu a[href^="#"]');
 scrollSuave.init();
@@ -19,7 +21,7 @@ modal.init()
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
-
+buscaAnimais('../animais.json', '.numeros-grid');
 
 
 
@@ -27,7 +29,7 @@ tooltip.init();
 import initDropDownMenu from './module/dropDownMenu.js';
 import initMenuMobile from './module/menuMobile.js';
 import initFuncionamento from './module/horarioDeFuncionamento.js';
-import initFetchAnimais from './module/fetchAnimais.js';
+
 import initFetchBtc from './module/fetchBtc.js'
 import initAnimatedScroll from "./module/scrollAnimation.js";
 
@@ -39,7 +41,7 @@ import initAnimatedScroll from "./module/scrollAnimation.js";
 initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
-initFetchAnimais();
+
 initFetchBtc();
 initAnimatedScroll();
 
