@@ -2,6 +2,7 @@ import softScroll from "./module/softScroll.js";
 import Accordion from "./module/accordionNav.js";
 import TabNav from "./module/tabNav.js";
 import Modal from "./module/modal.js";
+import Tooltip from "./module/toolTip.js";
 
 const scrollSuave = new softScroll('.navmenu a[href^="#"]');
 scrollSuave.init();
@@ -15,13 +16,14 @@ tabNav.init();
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.init()
 
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
 
 
 
 
 
 
-import initTooltip from "./module/toolTip.js";
 import initDropDownMenu from './module/dropDownMenu.js';
 import initMenuMobile from './module/menuMobile.js';
 import initFuncionamento from './module/horarioDeFuncionamento.js';
@@ -33,7 +35,7 @@ import initAnimatedScroll from "./module/scrollAnimation.js";
 
 
 
-initTooltip();
+
 initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
