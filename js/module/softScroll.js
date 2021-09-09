@@ -1,27 +1,37 @@
-export default function softScroll() {
-   const internalLinks = document.querySelectorAll('.navmenu a[href^="#"]')
+export default class softScroll {
+   constructor(links, options) {
+      this.linksInternos = document.querySelectorAll(links)
+      if (options === undefined) {
+         this.options = {
+            behavior: 'smooth',
+            block: 'start'
+         }
+      } else {
+         this.options = options
+      }
+      this.scrollToSection = this.scrollToSection.bind(this);
+   }
 
-   function scrollToSection(event) {
+   scrollToSection(event) {
       event.preventDefault();
       const hrefLink = event.currentTarget.getAttribute('href');
       const section = document.querySelector(hrefLink)
-
-      section.scrollIntoView({
-         behavior: 'smooth',
-         block: 'start',
-      });
-
-
-
-      /* uma das formas de fazer scroll suave
-            const topScroll = section.offsetTop; ====> seleciona o topo da section para onde vai o scroll
-            window.scrollTo({
-               top: topScroll, ====> para onde vai / ate onde vai o scroll
-               behavior: 'smooth', ====> propriedade que faz o scroll ser suave
-            });*/
+      section.scrollIntoView(this.options);
    }
 
-   internalLinks.forEach((link) => {
-      link.addEventListener('click', scrollToSection);
-   })
+   addLinkEvent() {
+      this.linksInternos.forEach((link) => {
+         link.addEventListener('click', this.scrollToSection)
+      })
+   }
+
+   init() {
+      if (this.linksInternos.length) {
+         this.addLinkEvent()
+      }
+      return this
+   }
+
 }
+
+

@@ -1,4 +1,11 @@
 import softScroll from "./module/softScroll.js";
+
+const scrollSuave = new softScroll('.navmenu a[href^="#"]');
+scrollSuave.init();
+
+
+
+
 import initAnimatedScroll from "./module/scrollAnimation.js";
 import accordionNavigation from "./module/accordionNav.js";
 import tabNav from "./module/tabNav.js";
@@ -10,7 +17,7 @@ import initFuncionamento from './module/horarioDeFuncionamento.js';
 import initFetchAnimais from './module/fetchAnimais.js';
 import initFetchBtc from './module/fetchBtc.js'
 
-softScroll();
+
 initAnimatedScroll();
 accordionNavigation();
 tabNav();
