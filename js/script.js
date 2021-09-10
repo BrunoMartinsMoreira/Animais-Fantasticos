@@ -9,6 +9,7 @@ import AnimaScroll from "./module/scrollAnimation.js";
 import DropDownMenu from './module/dropDownMenu.js';
 import MenuMobile from './module/menuMobile.js';
 import Funcionamento from './module/horarioDeFuncionamento.js';
+import { SlideNav } from './module/slide.js'
 
 const scrollSuave = new softScroll('.navmenu a[href^="#"]');
 scrollSuave.init();
@@ -39,6 +40,10 @@ funcionamento.init();
 
 buscaAnimais('../animais.json', '.numeros-grid');
 FetchBtc('https://blockchain.info/ticker', '.btc-preco');
+
+const slide = new SlideNav('.slide', '.wrapper');
+slide.init();
+slide.addControl('.customControls');
 
 
 
