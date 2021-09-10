@@ -8,7 +8,7 @@ import FetchBtc from './module/fetchBtc.js';
 import AnimaScroll from "./module/scrollAnimation.js";
 import DropDownMenu from './module/dropDownMenu.js';
 import MenuMobile from './module/menuMobile.js';
-
+import Funcionamento from './module/horarioDeFuncionamento.js';
 
 const scrollSuave = new softScroll('.navmenu a[href^="#"]');
 scrollSuave.init();
@@ -34,8 +34,10 @@ dropDown.init();
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
-buscaAnimais('../animais.json', '.numeros-grid');
+const funcionamento = new Funcionamento("[data-semana]");
+funcionamento.init();
 
+buscaAnimais('../animais.json', '.numeros-grid');
 FetchBtc('https://blockchain.info/ticker', '.btc-preco');
 
 
@@ -43,7 +45,6 @@ FetchBtc('https://blockchain.info/ticker', '.btc-preco');
 
 
 
-import initFuncionamento from './module/horarioDeFuncionamento.js';
 
 
 
@@ -54,7 +55,8 @@ import initFuncionamento from './module/horarioDeFuncionamento.js';
 
 
 
-initFuncionamento();
+
+
 
 
 
