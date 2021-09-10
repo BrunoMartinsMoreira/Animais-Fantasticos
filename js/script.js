@@ -6,6 +6,7 @@ import Tooltip from "./module/toolTip.js";
 import buscaAnimais from './module/fetchAnimais.js';
 import FetchBtc from './module/fetchBtc.js';
 import AnimaScroll from "./module/scrollAnimation.js";
+import DropDownMenu from './module/dropDownMenu.js';
 
 
 const scrollSuave = new softScroll('.navmenu a[href^="#"]');
@@ -26,6 +27,9 @@ tooltip.init();
 const animaScroll = new AnimaScroll('.js-scroll', 'active');
 animaScroll.init();
 
+const dropDown = new DropDownMenu('[data-dropdown]')
+dropDown.init();
+
 buscaAnimais('../animais.json', '.numeros-grid');
 
 FetchBtc('https://blockchain.info/ticker', '.btc-preco');
@@ -33,7 +37,7 @@ FetchBtc('https://blockchain.info/ticker', '.btc-preco');
 
 
 
-import initDropDownMenu from './module/dropDownMenu.js';
+
 import initMenuMobile from './module/menuMobile.js';
 import initFuncionamento from './module/horarioDeFuncionamento.js';
 
@@ -44,7 +48,7 @@ import initFuncionamento from './module/horarioDeFuncionamento.js';
 
 
 
-initDropDownMenu();
+
 initMenuMobile();
 initFuncionamento();
 
